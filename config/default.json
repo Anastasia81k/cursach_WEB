@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "jwtSecret": "anastasia kovalchuk 271gr",
+  "mongoURL":"mongodb+srv://anastasia:0987135303@cluster0.tkpor.mongodb.net/cursachDB?retryWrites=true&w=majority"
+}
