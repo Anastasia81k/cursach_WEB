@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css'
-
-const App = () =>(
-    <div>
-        <h1>Hello world!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
-    </div>
-)
+import 'materialize-css'
+import App from "./App";
 
 
 ReactDOM.render(
