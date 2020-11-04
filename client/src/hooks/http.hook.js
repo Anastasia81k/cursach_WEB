@@ -3,18 +3,17 @@ import {useState, useCallback} from 'react'
 //позволяет вщаимодействовать с сервером
 //useCallback  - react не входит в рекурсию
 
-export const useHttp =() =>{
-    const [loading, setLoading ] = useState(false);
-    const [error, setError] = useState(null);
-    const request = useCallback(async (url, method = "GET", body= null, headers={} ) => {
+export const useHttp = () =>{
+    const [loading, setLoading] = useState(false) //грузит сервер или нет
+    const [error , setError] = useState(null)
+
+    const request =useCallback( async (url, method = "GET", body = null, headers ={}) =>{ ///useCallback для того чтобы реакт не входил в рекурсию
         setLoading(true)
-        try {
+        try{  //try для оператора async  await
+            const response = await fetch(url, {method, body, headers})//браузерный метод, после того как дождались ответа с сервера
+            const data = await response.json() ///распарсить данные полученые с сервера
 
-
-
-            const response = await fetch(url, {method, body, headers})
-            const data = await response.json() ///распарсить полученные данные с сервера
-            if(!response.ok){
+            if (!response.ok) {
                 throw new Error(data.message || "Что-то пошло не так")
             }
 
@@ -24,12 +23,12 @@ export const useHttp =() =>{
         } catch (e) {
             setLoading(false)
             setError(e.message)
-            throw e
+            throw e   //для тогот чтоб отработать ошибку в компонентах
         }
-    }, []);
-
+    }, [])//набор зависимостей
 
     const clearError = () => setError(null)
-
-    return {loading, request, error}
+    return{
+        loading, request, error, clearError
+    }
 }
