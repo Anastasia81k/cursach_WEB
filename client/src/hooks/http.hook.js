@@ -10,6 +10,11 @@ export const useHttp = () =>{
     const request =useCallback( async (url, method = "GET", body = null, headers ={}) =>{ ///useCallback для того чтобы реакт не входил в рекурсию
         setLoading(true)
         try{  //try для оператора async  await
+            if(body){
+                body = JSON.stringify(body);
+                headers['Content-Type'] = 'application/json'
+
+            }
             const response = await fetch(url, {method, body, headers})//браузерный метод, после того как дождались ответа с сервера
             const data = await response.json() ///распарсить данные полученые с сервера
 
