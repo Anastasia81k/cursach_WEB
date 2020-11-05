@@ -1,15 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useHttp} from "../hooks/http.hook";
 import 'react-hooks-lib'
-
+import {useMessage} from "../hooks/message.hook";
 
 
 export const AuthPage = () =>{
- const {loading, request} = useHttp()
+    const message = useMessage()
+ const {loading, request, error, clearError} = useHttp()
     const [form, setForm] = useState({ ///создание хука с объектом
         email: "", password: ""
     })
 
+    useEffect(() =>{
+        message(error)
+       clearError()
+    }, [error, message, clearError])
     //для обрабатывания формы
     const changeHandler = event =>{
         setForm({...form, [event.target.name]: event.target.value})  ///опратор spred  event.target.name - динамический     onChange in input -update form
@@ -20,7 +25,7 @@ export const AuthPage = () =>{
     const registerHandler = async  () =>{
         try{
             const data = await request("/api/auth/register", "POST", {...form})
-            console.log("data ", data)
+            message(data.message)
         }catch(e){}
     }
 
