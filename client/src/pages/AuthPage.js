@@ -18,6 +18,11 @@ export const AuthPage = () =>{
         message(error)
        clearError()
     }, [error, message, clearError])
+
+    useEffect(() =>{
+        window.M.updateTextFields() ///позволяет сделать активными inputs
+    }, [])
+
     //для обрабатывания формы
     const changeHandler = event =>{
         setForm({...form, [event.target.name]: event.target.value})  ///опратор spred  event.target.name - динамический     onChange in input -update form
@@ -56,7 +61,7 @@ export const AuthPage = () =>{
     return(
         <div className="row">
             <div className="col s6 offset-s3">
-                <h1>Сократи ссылку</h1>
+                <h1>Авторизация</h1>
                 <div className="card blue darken-1">
                     <div className="card-content white-text">
                         <span className="card-title">Авторизация</span>

@@ -1,9 +1,13 @@
 import React from 'react'
 
+import Form from "../components/Form";
+import {FeedbackForm} from "../components/FeedbackForm";
+
+
 export const LinksPage = () =>{
     return(
         <div>
-            <h1>Links Page</h1>
+       <FeedbackForm/>
         </div>
     )
 }

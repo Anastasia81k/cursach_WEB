@@ -4,6 +4,8 @@ import {LinksPage} from "./pages/LinksPage";
 import {CreatePage} from "./pages/CreatePage";
 import {DetailPage} from "./pages/DetailPage";
 import {AuthPage} from "./pages/AuthPage";
+import {UniversitiesPage} from "./pages/UniversitiesPage";
+import {PersonalPage} from "./pages/PersonalPage";
 
 ///экспор функции, принимает параметр (флаг, говорящий зарегестрирован ли пользователь в системе и какие роуты ему возвращать
 export const useRoutes = isAuthenticated => {
@@ -15,6 +17,12 @@ export const useRoutes = isAuthenticated => {
                 </Route>
                 <Route path="/create" exact>
                     <CreatePage />
+                </Route>
+                <Route path="/universities" exact>
+                    <UniversitiesPage/>
+                </Route>
+                <Route path="/personal" exact>
+                    <PersonalPage/>
                 </Route>
                 <Route path="/detail/:id">
                     <DetailPage />
