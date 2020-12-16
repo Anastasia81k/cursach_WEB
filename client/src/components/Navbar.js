@@ -18,14 +18,14 @@ export  const Navbar = () =>{
     <div className="header">
         <div className="logo">
             <div className="logo-text">
-                <h1><a href="/">Мністерство оборони України</a></h1>
-                <h2>Департамент військової освіти та науки</h2>
+                <h1><a href="/">Департамент військової освіти та науки</a></h1>
+                <h2>Мністерство оборони України</h2>
             </div>
         </div>
         <div className="menubar">
             <ul className="menu">
                 <li className="selected"><NavLink to="/create">Головна</NavLink></li>
-                <li><NavLink to="/universities">Військова освіта</NavLink></li>
+                <li><NavLink to="/univ">Військова освіта</NavLink></li>
                 <li><NavLink to="/personal">Особистий кабінет</NavLink></li>
                 <li><NavLink to="/links">Зворотній зв'язок</NavLink></li>
                 <li><a href="/" onClick={logoutHandler}>Вихід</a></li>

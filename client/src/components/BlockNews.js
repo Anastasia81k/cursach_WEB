@@ -12,8 +12,8 @@ export  const BlockNews = () => {
                     </div>
                     <div className="sidebar">
                         <h2>Новини</h2>
-                        <span>08.09.2020</span>
-                        <p>День рождения сайта</p>
+                        <span>13.11.2020</span>
+                        <p>Особливості вступної кампанії до закладів військової освіти у 2020 році</p>
                         <a href="#">читать</a>
                     </div>
                     <div className="sidebar">

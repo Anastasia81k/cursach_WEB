@@ -18,7 +18,9 @@ input.yellow-input:focus {
     box-shadow: 0 1px 0 0 #ffeb3b!important;
 }
 
-
+.carousel-root {
+    height: 530px;
+}
 
 .carousel .slider-wrapper.axis-horizontal .slider .slide {
  background: white;
@@ -52,6 +54,11 @@ input, textarea{
     outline: none;  /* не влияет на ширину элемента*/
     border: none;   /*влияет на ширину элемента  оба отвечают за то, чтоб рамкп не светилась*/
     border: solid 1px #f2f2f2;
+}
+
+
+h1 a {
+    font-size: xx-large;
 }
 
 h1, h2{
